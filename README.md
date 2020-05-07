@@ -13,5 +13,13 @@
     - [x] ElasticBeanstalk
     - [x] Kinesis 
 * [] Section 9: Developer Theory
+    - [] CI/CD
+    - [] CodeCommit 
+    - [] CodeDeploy
+    - [] CodePipeline
+    - [] Elastic Container Service
+    - [] Docker and CodeBuild
+    - [] CloudFormation 
+    - [] Serverless Application Model [SAM]
 * [] Section 10: Advanced IAM 
 * [x] Section 11: Monitoring 
