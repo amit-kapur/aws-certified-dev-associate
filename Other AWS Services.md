@@ -9,7 +9,7 @@
     - [] Kinesis 
 
 
-* Simple Queue Service (SQS)
+# Simple Queue Service (SQS)
     This is the first AWS service developed by Amazon team.
 
     - SQL is a distributed message queueing system
@@ -63,7 +63,7 @@
                       It helps saves money as you don't poll empty queues. 
 
 
-* Simple Notification Service (SNS)
+# Simple Notification Service (SNS)
 
     - Push Based System
 
@@ -89,7 +89,7 @@
         - $2 per 100,000 Notification deliveries over Email
 
 
-* SNS vs SQS
+# SNS vs SQS
 
     - Both are messaging services 
     - SNS - Push
@@ -104,5 +104,99 @@
     You only need to know email address. 
 
 
-* ElasticBeanstalk 
+# Elastic Beanstalk
+
+It is a service for deploying and scaling web applications developed in many popular languages:
+Java, .NET, PHP, Node.js, Python, Ruby, Go and Docker on widely used application server platforms like 
+Apache Tomcat, Nginx, IIS etc. 
+
+Provides infrastructure needed to run the application (IaaS)
+A provisioning service for applications 
+
+You upload your code and Elastic Beanstalk will handle deployment, capacity provisioning, load balancing, auto-scaling and application health.
+
+You retain full control of the underlying AWS resources powering your application and you pay only for the AWS resources required to store and run your applications. 
+
+    # Updating Elastic Beanstalk 
+
+    ** Important for exam **
+
+    * EBS Deployment Policies 
+
+        - 1. All at once
+            - Service interruptions while you update the entire environment at one - Outages and Downtime 
+            - Not ideal for Mission critical applications
+            - Rollback to previous version when update fails.
+
+        - 2. Rolling 
+            - Deploys the new version in batches 
+            - Each batch of instances is taken out of service while the deployment takes place.
+            - Your environment capacity will be reduced by the number of instances in a batch while the deployment takes place
+            - Not ideal for Performance sensitive systems 
+            - If the update fails, you need to perform an additional rolling update to roll back the changes
+
+            - Reduced capacity during deployment
+            - To roll back, perform a further rolling update.
+
+        - 3. Rolling with additional Batch
+            - Launches an additional batch of instances
+            - Deploys the new version in batches 
+            - No Downtime and maintains Full Capacity #
+
+             - Maintains Full capacity during deployment
+            - To roll back, perform a further rolling update.
+
+        - 4. Immutable 
+            - Deploys the new version to a fresh group of instances in their own new auto-scaling group 
+            - When the new instances pass their health checks, then are moved to your existing auto scaling group; finally, old instances are terminated. 
+            - Maintains full capacity during the deployment process
+            - The impact fo failed update is far leas, and the rollback process requires only terminating the new auto scaling group 
+           
+            - Preferred option for Mission Critical production systems
+            - Maintains Full capacity 
+            - To roll back, just delete the new instance and auto-scaling group.
+
+
+    #  Configuration file for Elastic Beanstalk environment
+
+        - any filename with .config extension 
+            - for example myhealthcheckurl.config
+        - the config file can have JSON or YAML format
+        - It must be saved in .ebextensions folder and this folder should be saved in Top level directory of the application source code bundle. 
+
+
+# Kinesis 
+
+    - Streaming data? 
+        - stock prices
+        - gaming data
+        - social network data
+        - purchases from online stores, think AMAZON 
+        - geospatial data , think UBER
+        - iOT Sensor data
+
+    Amazon Kinesis is a platform on AWS to send your streaming data too. Kinesis makes it easy to load and analyze streaming data, 
+    and also providing the ability for you to build your own custom applications for your business needs. 
+
+    - Services (Three)
+        - 1. Kineses Streams (Shards)
+            - stores data send by producer in shards for 24 hours. You can increase them to 7 days. 
+            Next, EC2 consumes the data and perform calculation 
+            Finally, you can store the data in S3, Redshift, DynamoDB, EMR
+
+            You can have multiple shards in a stream. 
+
+        - 2. Kinesis Firehose (Lambda)
+
+            Data Producers --> Kinesis Firehose (Fully Automated, No shards) --> Analysed ny Lambda (maybe) -->  S3, Firehose, Elasticsearch cluster
+
+        - 3. Kinesis Analytics 
+            - Run SQL queries on Streams or Firehose and save result in S3. 
+
+
+
+
+
+
+            
 

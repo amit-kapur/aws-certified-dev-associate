@@ -6,12 +6,12 @@
 * [x] Section 5: Serverless Computing 
 * [x] Section 6: DynamoDB
 * [x] Section 7: KMS & Encryption 
-* [] Section 8: Other AWS Services
+* [x] Section 8: Other AWS Services
     - [x] Simple Queue Service
     - [x] Simple Notification Service
     - [x] Simple Email Service 
-    - [] ElasticBeanstalk
-    - [] Kinesis 
+    - [x] ElasticBeanstalk
+    - [x] Kinesis 
 * [] Section 9: Developer Theory
 * [] Section 10: Advanced IAM 
 * [x] Section 11: Monitoring 
