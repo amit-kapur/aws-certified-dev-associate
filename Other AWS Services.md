@@ -96,10 +96,12 @@
     - SQL - Pull (Polls)
 
 
-* Simple Email Service 
+* Simple Email Service (SES)
 
     It is a scalable and highly available email service designed to help marketing team and application developers send marketing, 
     notification, and transactional emails to their customers using a pay as you go model. 
+
+    You only need to know email address. 
 
 
 * ElasticBeanstalk 
